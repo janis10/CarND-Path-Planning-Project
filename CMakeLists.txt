@@ -1,6 +1,7 @@
 project(Path_Planning)
 
 cmake_minimum_required (VERSION 3.5)
+find_package(Eigen3 REQUIRED NO_MODULE)
 
 add_definitions(-std=c++11)
 
@@ -23,4 +24,4 @@ endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 add_executable(path_planning ${sources})
 
-target_link_libraries(path_planning z ssl uv uWS)
+target_link_libraries(path_planning z ssl uv uWS Eigen3::Eigen)
